@@ -5,12 +5,15 @@ load_dotenv()
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
+google_api_key = os.getenv("GOOGLE_API_KEY")
+if google_api_key is None:
+    raise ValueError("GOOGLE_API_KEY is not set. Please check your .env file.")
 
 ## call the gemini models
-llm=ChatGoogleGenerativeAI(model="gemini-1.5-flash",
+llm=ChatGoogleGenerativeAI(model="google/gemini-pro",
                            verbose=True,
                            temperature=0.5,
-                           google_api_key=os.getenv("GOOGLE_API_KEY"))
+                           google_api_key=os.getenv("AIzaSyCgwXIhA9looGDynjN8uVhyvRSUULm7_s8"))
 
 # Creating a senior researcher agent with memory and verbose mode
 

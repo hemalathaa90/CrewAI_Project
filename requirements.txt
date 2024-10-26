@@ -1,4 +1,5 @@
-crewai
-langchain_google_genai
-load_dotenv
-crewai_tools
+crewai>=0.76.2
+litellm>=1.0.0
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+langchain>=0.1.0
